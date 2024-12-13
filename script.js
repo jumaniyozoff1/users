@@ -8,7 +8,6 @@ axios
 
       container_card.innerHTML += `
         <div
-            onclick="goToAlbum(${userInfo.id})"
             class="card"
             style="width: 18rem; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)"
         >
@@ -25,8 +24,8 @@ axios
             <p class="card-text">
                 <small class="text-muted">Location: ${userInfo.address.street}</small>
             </p>
-            <a href="#" class="btn btn-primary btn-sm">Follow</a>
-            <a href="#" class="btn btn-outline-secondary btn-sm">Message</a>
+            <a  onclick="goToPost(${userInfo.id})" class="btn btn-primary btn-sm">Post</a>
+            <a onclick="goToAlbum(${userInfo.id})" class="btn btn-outline-secondary btn-sm">Album</a>
             </div>
         </div>
       `;
@@ -40,3 +39,6 @@ function goToAlbum(id) {
   window.location.href = "album.html?userId=" + id;
 }
 
+function goToPost(id) {
+  window.location.href = "post.html?userId=" + id;
+}
