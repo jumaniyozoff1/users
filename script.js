@@ -4,6 +4,8 @@ axios
   .get("https://jsonplaceholder.typicode.com/users")
   .then((res) => {
     res.data.map((userInfo) => {
+      console.log(userInfo);
+
       container_card.innerHTML += `
         <div
             onclick="goToAlbum(${userInfo.id})"
@@ -37,3 +39,4 @@ axios
 function goToAlbum(id) {
   window.location.href = "album.html?userId=" + id;
 }
+
